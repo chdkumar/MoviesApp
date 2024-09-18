@@ -1,38 +1,39 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.data{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 400px;
+  height: 200px;
+  background-color: rgb(192, 192, 192);
+  
 }
+.Greet{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 400px;
+  height: 200px;
+  background-image: url("https://th.bing.com/th/id/OIP.llDKmcgD98q5zwZ3KH19kQHaEo?rs=1&pid=ImgDetMain");
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title{
+  text-align: center;
+  color: whitesmoke;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search{
+  text-align: center;
+  color: whitesmoke;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: rgb(180, 180, 180);
 }

@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {  Box } from "@mui/material";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import MovieList from "./components/MovieList";
+import PermanentDrawerLeft from "./PermanentDrawer";
+import ButtonAppBar from "./AppBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Provider store={store}>
+      <Box sx={{ display: "flex" }}>
+        <ButtonAppBar />
+        <PermanentDrawerLeft />
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            padding: 3,
+            marginTop: "64px", // AppBar height
+            marginLeft: "140px", // Drawer width
+            display: "flex",
+            justifyContent: "left",
+            alignItems: "left",
+            height: "calc(100vh - 64px)", // Full viewport height minus AppBar height
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <MovieList />
+        </Box>
+      </Box>
+    </Provider>
   );
 }
 
