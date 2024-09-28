@@ -21,3 +21,4 @@ export const getMovies = async (type = "popular", page = 1) => {
 };
 
 export default tmdbApi;
+

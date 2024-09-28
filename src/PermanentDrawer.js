@@ -8,6 +8,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import { useNavigate } from "react-router-dom";
 
 // Import necessary icons
 import MovieIcon from "@mui/icons-material/Movie";
@@ -23,8 +24,8 @@ import BloodtypeIcon from "@mui/icons-material/Bloodtype";
 const drawerWidth = 240;
 
 const categories = [
-  { name: "Popular", icon: <MovieIcon /> },
-  { name: "Top Rated", icon: <StarIcon /> },
+  { name: "Popular", icon: <MovieIcon  /> },
+  { name: "Top Rated", icon: <StarIcon /> , },
   { name: "Upcoming", icon: <UpcomingIcon /> },
 ];
 
@@ -46,6 +47,44 @@ const hoverText = "#ffffff"; // White hover text
 const dividerColor = "#444444"; // Dark gray divider
 
 export default function PermanentDrawerLeft() {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    if (category.name === "Popular") {
+      navigate("/popular");
+    }
+    else if (category.name === "Top Rated") {
+      navigate("/top-rated");
+    }
+    else if (category.name === "Upcoming") {
+      navigate("/upcoming");
+    }
+  };
+
+  const handleGenreClick = (Genres) => {
+    if (Genres.name === "Action") {
+      navigate("/action");
+    }
+    else if (Genres.name === "Adventure") {
+      navigate("/adventure");
+    }
+    else if (Genres.name === "Animation") {
+      navigate("/animation");
+    }
+    else if (Genres.name === "Comedy") {
+      navigate("/comedy");
+    }
+    else if (Genres.name === "Crime") {
+      navigate("/crime");
+    }
+    else if (Genres.name === "Family") {
+      navigate("/family");
+    }
+    else if (Genres.name === "Horror") {
+      navigate("/horror");
+    }
+  };
+
   return (
     <Drawer
       sx={{
@@ -80,7 +119,7 @@ export default function PermanentDrawerLeft() {
         <List>
           {categories.map((item) => (
             <ListItem key={item.name} disablePadding>
-              <ListItemButton
+              <ListItemButton onClick={() => handleCategoryClick(item)}
                 sx={{
                   "&:hover": {
                     backgroundColor: hoverBg,
@@ -124,7 +163,7 @@ export default function PermanentDrawerLeft() {
         <List>
           {genres.map((item) => (
             <ListItem key={item.name} disablePadding>
-              <ListItemButton
+              <ListItemButton onClick={() => handleGenreClick(item)}
                 sx={{
                   "&:hover": {
                     backgroundColor: hoverBg,
@@ -155,3 +194,5 @@ export default function PermanentDrawerLeft() {
     </Drawer>
   );
 }
+
+
